@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"math/rand/v2"
+	"math/rand"
 	"time"
 
 	"github.com/mikefarah/yq/v4/pkg/yqlib"
@@ -17,7 +17,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	err = yqEval("./examples/example1.yaml", fmt.Sprintf(".my.test.count = %d", rand.IntN(100)))
+	err = yqEval("./examples/example1.yaml", fmt.Sprintf(".my.test.count = %d", rand.Intn(100)))
 	if err != nil {
 		fmt.Println(err)
 	}
